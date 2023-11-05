@@ -1,5 +1,32 @@
 # p-afu_gep_import
 
+GRETL:
+```
+docker compose run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
+  gretl -PtopicName=afu_gep -PschemaDirName=schema createSchema configureSchema
+```
+
+```
+docker compose run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub createSchema configureSchema
+```
+
+
+```
+docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub dropSchema createSchema configureSchema
+
+
+docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub createSchema configureSchema
+```
+
+
+```
+docker compose run --rm -u $UID gretl --project-dir=afu_gep_pub
+```
+
+
 Edit:
 
 ```
