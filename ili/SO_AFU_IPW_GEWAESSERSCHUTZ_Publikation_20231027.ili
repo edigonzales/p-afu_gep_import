@@ -1,0 +1,55 @@
+INTERLIS 2.3;
+
+/**
+ * !!------------------------------------------------------------------------------
+ * !! Version    | wer | Änderung
+ * !!------------------------------------------------------------------------------
+ * !! 2023-04-11 | SHE | Erste publizierte Version
+ * !! 2023-10-27 | SHE | Anpassungen aufgrund Update Base
+ * !!==============================================================================
+ */
+!!@ technicalContact = "mailto:agi@bd.so.ch"
+
+MODEL SO_AFU_IPW_GEWAESSERSCHUTZ_Publikation_20231027 (de)
+  AT "https://afu.so.ch"
+  VERSION "2023-10-27" =
+  IMPORTS GeometryCHLV95_V1,
+          SO_AFU_VSADSSMINI_Base_Publikation_20231027;
+
+  /** Gewässerschutzzonen
+   */
+  TOPIC Gewaesserschutz =
+    OID AS INTERLIS.UUIDOID;
+
+    /** Schutzzonen gemäss planerischem Gewässerschutz
+     */
+    CLASS Schutzzone =
+      /** Bemerkung zur Schutzzone
+       */
+      Bemerkung : MTEXT*200;
+      /** (Single-) Polygon der Zone
+       */
+      Geometrie : MANDATORY GeometryCHLV95_V1.Surface;
+      /** Gibt an, ob die Schutzzone gesetzeskonform oder altrechtlich ist
+       */
+      istAltrechtlich : MANDATORY SO_AFU_VSADSSMINI_Base_Publikation_20231027.Aufzaehlwert;
+      /** kantonsspezifische Typbezeichnung
+       */
+      KantonaleTypBezeichnung : MTEXT*200;
+      /** Identifikator des Objektes aus Planerischer_Gewaesserschutz
+       */
+      OID_GWS : INTERLIS.STANDARDOID;
+      /** Datum, seit welchem die Zone rechtskraeftig ist
+       */
+      Rechtskraftdatum : INTERLIS.XMLDate;
+      /** Status, ob die Zone in Kraft ist.
+       */
+      Rechtsstatus : MANDATORY SO_AFU_VSADSSMINI_Base_Publikation_20231027.Aufzaehlwert;
+      /** Typ der Zone
+       */
+      Typ : MANDATORY SO_AFU_VSADSSMINI_Base_Publikation_20231027.Aufzaehlwert;
+    END Schutzzone;
+
+  END Gewaesserschutz;
+
+END SO_AFU_IPW_GEWAESSERSCHUTZ_Publikation_20231027.
