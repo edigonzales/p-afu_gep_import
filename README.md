@@ -14,11 +14,11 @@ docker compose run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schem
 
 ```
 docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
-  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub dropSchema createSchema configureSchema
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_wk_pub dropSchema createSchema configureSchema
 
 
 docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
-  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub createSchema configureSchema
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_wk_pub createSchema configureSchema
 ```
 
 
@@ -32,7 +32,6 @@ Edit:
 ```
 java -jar /Users/stefan/apps/ili2pg-4.9.1/ili2pg-4.9.1.jar --dbhost localhost --dbport 54321 --dbdatabase edit --dbusr ddluser --dbpwd ddluser --defaultSrsCode 2056 --createGeomIdx  --createFk --createFkIdx --createEnumTabs --createMetaInfo --nameByTopic --strokeArcs --createBasketCol --createDatasetCol --createUnique --createNumChecks --createTextChecks --createDateTimeChecks --createImportTabs --dbschema afu_gep_v1 --models "SIA405_Base_Abwasser_LV95;VSADSSMINI_2020_LV95" --schemaimport
 ```
-
 
 ```
 java -jar /Users/stefan/apps/ili2pg-4.9.1/ili2pg-4.9.1.jar --dbhost localhost --dbport 54321 --dbdatabase edit --dbusr ddluser --dbpwd ddluser --dbschema afu_gep_v1 --models "SIA405_Base_Abwasser_LV95" --disableValidation --defaultSrsCode 2056 --dataset organisation --importBid --import data/vsa_organisationen.xtf
