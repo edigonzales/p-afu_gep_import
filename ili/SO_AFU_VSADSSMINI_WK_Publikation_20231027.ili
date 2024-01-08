@@ -25,7 +25,7 @@ MODEL SO_AFU_VSADSSMINI_WK_Publikation_20231027 (de)
 
   /** Filter: FunktionHierarchisch = PAA resp PAA.*
    */
-  TOPIC PAA =
+  TOPIC WK_PAA =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -83,11 +83,11 @@ MODEL SO_AFU_VSADSSMINI_WK_Publikation_20231027 (de)
     /** keine Beschriftung für Flächenobjekte
     */
 
-  END PAA;
+  END WK_PAA;
 
   /** Filter: FunktionHierarchisch = SAA resp SAA.*
    */
-   TOPIC SAA =
+   TOPIC WK_SAA =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -141,11 +141,11 @@ MODEL SO_AFU_VSADSSMINI_WK_Publikation_20231027 (de)
     /** keine Beschriftung für Flächenobjekte
      */
 
-  END SAA;
+  END WK_SAA;
 
   /** Objekte, denen aufgrund mangelnder Attributwerte keine Stil-Id zugeordnet werden konnte
    */
-  TOPIC Mangel =
+  TOPIC WK_Mangel =
     OID AS INTERLIS.UUIDOID;
 
     /** Mangelhafte Knoten
@@ -164,6 +164,6 @@ MODEL SO_AFU_VSADSSMINI_WK_Publikation_20231027 (de)
       Verlauf : MANDATORY GeometryCHLV95_V1.Line;
     END Leitung;
 
-  END Mangel;
+  END WK_Mangel;
 
 END SO_AFU_VSADSSMINI_WK_Publikation_20231027.

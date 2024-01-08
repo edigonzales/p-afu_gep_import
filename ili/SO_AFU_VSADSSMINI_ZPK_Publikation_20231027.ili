@@ -22,7 +22,7 @@ MODEL SO_AFU_VSADSSMINI_ZPK_Publikation_20231027 (de)
 
   /** Filter: FunktionHierarchisch = PAA resp PAA.*
    */
-  TOPIC PAA =
+  TOPIC ZPK_PAA =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -71,11 +71,11 @@ MODEL SO_AFU_VSADSSMINI_ZPK_Publikation_20231027 (de)
     /** keine Flächenobjekte gemäss Entscheidungsbaum
      */
 
-  END PAA;
+  END ZPK_PAA;
 
   /** Filter: FunktionHierarchisch = SAA resp SAA.*
    */
-  TOPIC SAA =
+  TOPIC ZPK_SAA =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -120,11 +120,11 @@ MODEL SO_AFU_VSADSSMINI_ZPK_Publikation_20231027 (de)
     /** keine Flächenobjekte gemäss Entscheidungsbaum
      */
 
-  END SAA;
+  END ZPK_SAA;
 
   /** Teileinzugsgebiete und Perimeter öffentliche Kanalisation
    */
-  TOPIC TEZG =
+  TOPIC ZPK_TEZG =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -139,11 +139,11 @@ MODEL SO_AFU_VSADSSMINI_ZPK_Publikation_20231027 (de)
     /** keine Beschriftung für Flächenobjekte
      */
 
-  END TEZG;
+  END ZPK_TEZG;
 
   /** Objekte, denen aufgrund mangelnder Attributwerte keine Stil-Id zugeordnet werden konnte
    */
-  TOPIC Mangel =
+  TOPIC ZPK_Mangel =
     OID AS INTERLIS.UUIDOID;
 
     /** Mangelhafte Knoten
@@ -162,6 +162,6 @@ MODEL SO_AFU_VSADSSMINI_ZPK_Publikation_20231027 (de)
       Verlauf : MANDATORY GeometryCHLV95_V1.Line;
     END Leitung;
 
-  END Mangel;
+  END ZPK_Mangel;
 
 END SO_AFU_VSADSSMINI_ZPK_Publikation_20231027.

@@ -24,7 +24,7 @@ MODEL SO_AFU_VSADSSMINI_EP_Publikation_20231027 (de)
 
   /** Filter: FunktionHierarchisch = PAA resp PAA.*
    */
-  TOPIC PAA =
+  TOPIC EP_PAA =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -72,11 +72,11 @@ MODEL SO_AFU_VSADSSMINI_EP_Publikation_20231027 (de)
     /** keine Beschriftung für Flächenobjekte
     */
 
-  END PAA;
+  END EP_PAA;
 
   /** Teileinzugsgebiete und Perimeter öffentliche Kanalisation
    */
-  TOPIC TEZG =
+  TOPIC EP_TEZG =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -98,11 +98,11 @@ MODEL SO_AFU_VSADSSMINI_EP_Publikation_20231027 (de)
     CLASS Beschriftung_TEZG_Soll EXTENDS SO_AFU_VSADSSMINI_Base_Publikation_20231027.Beschriftung_BaseClass =
     END Beschriftung_TEZG_Soll;
 
-  END TEZG;
+  END EP_TEZG;
 
   /** Abwasserentsorgung im ländlichen Raum ALR
    */
-  TOPIC ALR =
+  TOPIC EP_ALR =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -129,11 +129,11 @@ MODEL SO_AFU_VSADSSMINI_EP_Publikation_20231027 (de)
     /** keine Beschriftung für Flächenobjekte
      */
 
-  END ALR;
+  END EP_ALR;
 
   /** Objekte, denen aufgrund mangelnder Attributwerte keine Stil-Id zugeordnet werden konnte
    */
-  TOPIC Mangel =
+  TOPIC EP_Mangel =
     OID AS INTERLIS.UUIDOID;
 
     /** Mangelhafte Knoten
@@ -160,6 +160,6 @@ MODEL SO_AFU_VSADSSMINI_EP_Publikation_20231027 (de)
       Perimeter: MANDATORY GeometryCHLV95_V1.Surface;
     END TEZG;
 
-  END Mangel;
+  END EP_Mangel;
 
 END SO_AFU_VSADSSMINI_EP_Publikation_20231027.

@@ -14,12 +14,22 @@ docker compose run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schem
 
 ```
 docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
-  gretl -PtopicName=afu_gep -PschemaDirName=schema_wk_pub dropSchema createSchema configureSchema
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub dropSchema createSchema configureSchema
 
 
 docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
-  gretl -PtopicName=afu_gep -PschemaDirName=schema_wk_pub createSchema configureSchema
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub createSchema configureSchema
 ```
+
+```
+docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub_staging dropSchema createSchema configureSchema
+
+
+docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
+  gretl -PtopicName=afu_gep -PschemaDirName=schema_pub_staging createSchema configureSchema
+```
+
 
 
 ```

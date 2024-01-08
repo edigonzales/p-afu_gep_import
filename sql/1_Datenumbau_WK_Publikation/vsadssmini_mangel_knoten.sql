@@ -1,54 +1,43 @@
-/**
- * IPW Informationsplattform Wasser
- * Modellumbau VSA DSS mini nach Publikationsmodell (DSSMiniPub)
- * 
- * Planwerk:              Werkkataster Ist
- * INTERLIS Quellmodell:  VSADSSMINI_2020_LV95 VERSION "25.06.2021"
- * INTERLIS Zielmodell :  SO_AFU_VSADSSMINI_WK_Publikation_20231027 
- * Inhalt:                Mangel Knoten (Knoten ohne StilId)
- * Script:                vsadssmini_mangel_knoten.sql
- * Bearbeitung:           Stefan Henrich, moflex Infra GmbH, <stefan.henrich@moflex.ch> (she)
- * 
- * Versionierung:
- * 0.1.0                  (she) Initialversion
- * 0.2.0                  (she) Anpassung Zielmodell, Ergänzung Dataset
- */
-
-WITH
-
-mangel_k AS (
-
-  SELECT
-    *
-  FROM vsadssmini.vsadssmini_knoten k
-  LEFT JOIN (
-    SELECT oid_dss, stilid
-    FROM se_wk_pub.paa_schacht_se
-      UNION
-    SELECT oid_dss, stilid
-    FROM se_wk_pub.paa_schacht_dr 
-      UNION
-    SELECT oid_dss, stilid
-    FROM se_wk_pub.paa_sbw
-      UNION
-    SELECT oid_dss, stilid
-    FROM se_wk_pub.saa_schacht_se 
-      UNION
-    SELECT oid_dss, stilid
-    FROM se_wk_pub.saa_schacht_dr
-      UNION
-    SELECT oid_dss, stilid
-    FROM se_wk_pub.saa_sbw) u
-    ON k.t_ili_tid  = u.oid_dss
-  WHERE k.funktion NOT IN ('Be_Entlueftung', 'Bodenablauf', 'Dachwasserschacht', 'Entwaesserungsrinne', 'Entwaesserungsrinne_mit_Schlammsack', 'Gelaendemulde', 'Leitungsknoten', 'seitlicherZugang', 'Spuelschacht')
+WITH mangel_k AS (
+    SELECT
+        *
+    FROM ${DB_SCHEMA_EDIT}.vsadssmini_knoten k
+    LEFT JOIN (
+        SELECT oid_dss, stilid
+        FROM ${DB_SCHEMA_PUB_STAGING}.wk_paa_schacht_se
+            UNION ALL
+        SELECT oid_dss, stilid
+        FROM ${DB_SCHEMA_PUB_STAGING}.wk_paa_schacht_dr 
+            UNION ALL
+        SELECT oid_dss, stilid
+        FROM ${DB_SCHEMA_PUB_STAGING}.wk_paa_sbw
+            UNION ALL
+        SELECT oid_dss, stilid
+        FROM ${DB_SCHEMA_PUB_STAGING}.wk_saa_schacht_se 
+            UNION ALL
+        SELECT oid_dss, stilid
+        FROM ${DB_SCHEMA_PUB_STAGING}.wk_saa_schacht_dr
+            UNION ALL
+        SELECT oid_dss, stilid
+        FROM ${DB_SCHEMA_PUB_STAGING}.wk_saa_sbw) u
+        ON k.t_ili_tid  = u.oid_dss
+    WHERE k.funktion NOT IN ('Be_Entlueftung', 'Bodenablauf', 'Dachwasserschacht', 'Entwaesserungsrinne', 'Entwaesserungsrinne_mit_Schlammsack', 'Gelaendemulde', 'Leitungsknoten', 'seitlicherZugang', 'Spuelschacht')
 )
-
-INSERT INTO se_wk_pub.mangel_knoten (oid_dss, lage, beschreibung, dataset, stilid)
-  SELECT
+INSERT INTO
+    ${DB_SCHEMA_PUB_STAGING}.wk_mangel_knoten 
+    (
+        oid_dss, 
+        lage, 
+        beschreibung, 
+        dataset, 
+        stilid
+    )
+SELECT
     t_ili_tid,
     lage,
     'Objektinformationen mangelhaft für korrekte Darstellung',
     t_datasetname,
     'P_mangel'
-  FROM mangel_k
-  WHERE stilid IS NULL;
+FROM mangel_k
+WHERE stilid IS NULL
+;

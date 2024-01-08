@@ -24,7 +24,7 @@ MODEL SO_AFU_VSADSSMINI_MP_Publikation_20231027 (de)
 
   /** Filter: FunktionHierarchisch = PAA resp PAA.*
    */
-  TOPIC PAA =
+  TOPIC MP_PAA =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -72,11 +72,11 @@ MODEL SO_AFU_VSADSSMINI_MP_Publikation_20231027 (de)
     /** keine Beschriftung für Flächenobjekte
     */
 
-  END PAA;
+  END MP_PAA;
 
   /** Teileinzugsgebiete und Perimeter öffentliche Kanalisation
    */
-  TOPIC TEZG =
+  TOPIC MP_TEZG =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -96,11 +96,11 @@ MODEL SO_AFU_VSADSSMINI_MP_Publikation_20231027 (de)
     /** keine Beschriftung für Teileinzugsgebiete
      */
 
-  END TEZG;
+  END MP_TEZG;
 
   /** Abwasserentsorgung im ländlichen Raum ALR
    */
-  TOPIC ALR =
+  TOPIC MP_ALR =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -127,11 +127,11 @@ MODEL SO_AFU_VSADSSMINI_MP_Publikation_20231027 (de)
     /** keine Beschriftung für Flächenobjekte
      */
 
-  END ALR;
+  END MP_ALR;
 
   /** Massnahmen, die im Rahmen des GEP erarbeitet wurden und Stand ihrer Umsetzung
    */
-  TOPIC Massnahmen =
+  TOPIC MP_Massnahmen =
     OID AS INTERLIS.UUIDOID;
 
     /** Massnahmen Punktsymbol
@@ -226,11 +226,11 @@ MODEL SO_AFU_VSADSSMINI_MP_Publikation_20231027 (de)
       StilId : MANDATORY TEXT*50;
     END Massnahme_A;
 
-  END Massnahmen;
+  END MP_Massnahmen;
 
   /** Objekte, denen aufgrund mangelnder Attributwerte keine Stil-Id zugeordnet werden konnte
    */
-  TOPIC Mangel =
+  TOPIC MP_Mangel =
     OID AS INTERLIS.UUIDOID;
 
     /** Mangelhafte Knoten
@@ -257,6 +257,6 @@ MODEL SO_AFU_VSADSSMINI_MP_Publikation_20231027 (de)
       Perimeter: MANDATORY GeometryCHLV95_V1.Surface;
     END TEZG;
   
-  END Mangel;
+  END MP_Mangel;
 
 END SO_AFU_VSADSSMINI_MP_Publikation_20231027.

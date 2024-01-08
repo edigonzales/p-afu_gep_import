@@ -141,7 +141,7 @@ MODEL SO_AFU_VSADSSMINI_TEZG_Publikation_20231027 (de)
 
   /** Teileinzugsgebiete und Perimeter öffentliche Kanalisation
    */
-  TOPIC TEZG =
+  TOPIC TEZG_TEZG =
     OID AS INTERLIS.UUIDOID;
 
     /**
@@ -163,11 +163,11 @@ MODEL SO_AFU_VSADSSMINI_TEZG_Publikation_20231027 (de)
     CLASS Beschriftung_TEZG_Ist EXTENDS SO_AFU_VSADSSMINI_Base_Publikation_20231027.Beschriftung_BaseClass =
     END Beschriftung_TEZG_Ist;
 
-  END TEZG;
+  END TEZG_TEZG;
 
   /** Objekte, denen aufgrund mangelnder Attributwerte keine Stil-Id zugeordnet werden konnte
    */
-  TOPIC Mangel =
+  TOPIC TEZG_Mangel =
     OID AS INTERLIS.UUIDOID;
 
     /** Mangelhaftes Teileinzugsgebiet
@@ -178,6 +178,6 @@ MODEL SO_AFU_VSADSSMINI_TEZG_Publikation_20231027 (de)
       Perimeter: MANDATORY GeometryCHLV95_V1.Surface;
     END TEZG;
 
-  END Mangel;
+  END TEZG_Mangel;
   
 END SO_AFU_VSADSSMINI_TEZG_Publikation_20231027.
