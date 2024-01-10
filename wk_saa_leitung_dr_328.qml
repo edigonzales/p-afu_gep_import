@@ -41,7 +41,7 @@
             <Option name="dash_pattern_offset_unit" value="MM" type="QString"/>
             <Option name="draw_inside_polygon" value="0" type="QString"/>
             <Option name="joinstyle" value="bevel" type="QString"/>
-            <Option name="line_color" value="255,158,23,255" type="QString"/>
+            <Option name="line_color" value="229,182,54,255" type="QString"/>
             <Option name="line_style" value="solid" type="QString"/>
             <Option name="line_width" value="0.6" type="QString"/>
             <Option name="line_width_unit" value="MM" type="QString"/>
@@ -81,12 +81,12 @@
         <layer class="SimpleFill" enabled="1" locked="0" pass="0">
           <Option type="Map">
             <Option name="border_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
-            <Option name="color" value="255,158,23,255" type="QString"/>
+            <Option name="color" value="229,182,54,255" type="QString"/>
             <Option name="joinstyle" value="bevel" type="QString"/>
             <Option name="offset" value="0,0" type="QString"/>
             <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
             <Option name="offset_unit" value="MM" type="QString"/>
-            <Option name="outline_color" value="182,113,16,255" type="QString"/>
+            <Option name="outline_color" value="164,130,39,255" type="QString"/>
             <Option name="outline_style" value="solid" type="QString"/>
             <Option name="outline_width" value="0.2" type="QString"/>
             <Option name="outline_width_unit" value="MM" type="QString"/>
@@ -115,14 +115,14 @@
           <Option type="Map">
             <Option name="angle" value="0" type="QString"/>
             <Option name="cap_style" value="square" type="QString"/>
-            <Option name="color" value="255,158,23,255" type="QString"/>
+            <Option name="color" value="229,182,54,255" type="QString"/>
             <Option name="horizontal_anchor_point" value="1" type="QString"/>
             <Option name="joinstyle" value="bevel" type="QString"/>
             <Option name="name" value="diamond" type="QString"/>
             <Option name="offset" value="0,0" type="QString"/>
             <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
             <Option name="offset_unit" value="MM" type="QString"/>
-            <Option name="outline_color" value="182,113,16,255" type="QString"/>
+            <Option name="outline_color" value="164,130,39,255" type="QString"/>
             <Option name="outline_style" value="solid" type="QString"/>
             <Option name="outline_width" value="0.2" type="QString"/>
             <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
@@ -145,8 +145,8 @@
     </profileMarkerSymbol>
   </elevation>
   <renderer-v2 symbollevels="0" enableorderby="0" referencescale="-1" type="RuleRenderer" forceraster="0">
-    <rules key="{f117cae0-7ac8-4588-bddc-fe7f59457560}">
-      <rule filter="&quot;stilid&quot; = 'L_Drainage'" symbol="0" label="Drainageleitungen PAA" key="{3b8e0b69-a5b2-4275-9806-86ec7bc676dc}" scalemaxdenom="20001"/>
+    <rules key="{c0bd0877-2abd-46e7-8a9d-e2901890cc05}">
+      <rule filter="&quot;stilid&quot; = 'L_Drainage'" symbol="0" label="Drainageleitungen SAA" key="{b9598cae-cf3a-43ef-bb90-13743ce4118a}" scalemaxdenom="2001"/>
     </rules>
     <symbols>
       <symbol name="0" force_rhr="0" frame_rate="10" clip_to_extent="1" is_animated="0" type="line" alpha="1">
@@ -581,7 +581,7 @@
   <attributeactions>
     <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortExpression="&quot;nutzungsart_ist&quot;" actionWidgetStyle="dropDown" sortOrder="0">
+  <attributetableconfig sortExpression="&quot;stilid&quot;" actionWidgetStyle="dropDown" sortOrder="1">
     <columns>
       <column name="baujahr" hidden="0" type="field" width="-1"/>
       <column name="baulicherzustand" hidden="0" type="field" width="-1"/>
@@ -597,8 +597,8 @@
       <column name="lichte_breite" hidden="0" type="field" width="-1"/>
       <column name="lichte_hoehe" hidden="0" type="field" width="-1"/>
       <column name="material" hidden="0" type="field" width="-1"/>
-      <column name="nutzungsart_geplant" hidden="0" type="field" width="177"/>
-      <column name="nutzungsart_ist" hidden="0" type="field" width="249"/>
+      <column name="nutzungsart_geplant" hidden="0" type="field" width="-1"/>
+      <column name="nutzungsart_ist" hidden="0" type="field" width="-1"/>
       <column name="oid_dss" hidden="0" type="field" width="-1"/>
       <column name="profiltyp" hidden="0" type="field" width="-1"/>
       <column name="reliner_art" hidden="0" type="field" width="-1"/>
