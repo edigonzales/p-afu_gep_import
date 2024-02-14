@@ -22,7 +22,8 @@ docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //h
 ```
 
 ```
-docker compose -f ../gretljobs/docker-compose.yml run --rm -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
+docker compose -f ../gretljobs/docker-compose.yml run --rm
+ -u $UID --workdir //home/gradle/schema-jobs/shared/schema \
   gretl -PtopicName=afu_gep -PschemaDirName=schema_pub_staging dropSchema createSchema configureSchema
 
 
