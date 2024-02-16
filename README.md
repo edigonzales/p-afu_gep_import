@@ -56,7 +56,7 @@ java -jar /Users/stefan/apps/ili2pg-4.11.1/ili2pg-4.11.1.jar --dbhost geodb-t.ro
 
 
 ```
-java -jar /Users/stefan/apps/ili2pg-4.9.1/ili2pg-4.9.1.jar --dbhost localhost --dbport 54321 --dbdatabase edit --dbusr ddluser --dbpwd ddluser --dbschema afu_gep_v1 --models "VSADSSMINI_2020_LV95" --disableValidation --defaultSrsCode 2056 --dataset 2471_gep --import data/2471_gep.xtf
+java -jar /Users/stefan/apps/ili2pg-4.9.1/ili2pg-4.9.1.jar --dbhost localhost --dbport 54321 --dbdatabase edit --dbusr ddluser --dbpwd ddluser --dbschema afu_gep_v1 --models "VSADSSMINI_2020_LV95" --disableValidation --defaultSrsCode 2056 --dataset 2471 --import data/2471_gep.xtf
 ```
 
 Pub:
